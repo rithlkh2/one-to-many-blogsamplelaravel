@@ -16,13 +16,14 @@ class Test extends Controller
 {
     public function addproduct()
     {
-        /*$order = new Order();
-        $order->order_date = "2017-02-02";
-        $order->save();*/
+        $order2 = new Order();
+        $order2->order_date = "2017-12-22";
+        $order2->save();
+
         $product = new ProductOrder();
-        $product->description = "HelloProduct";
-        $product->order_id = 5;
+        $product->description = "HelloProduct2";
+        $product->order_id = $order2->id;
         $product->save();
-        echo "saved";
+        echo $order2->productitems;
     }
 }

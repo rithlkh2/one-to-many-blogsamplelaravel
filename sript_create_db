@@ -1,0 +1,20 @@
+- Orders
+- Productitem
+-----------------------
+php artisan make:migration create_orders --create=orders
+php artisan make:migration create_productitems --create=productitems
+--
+php artisan make:model Order
+--
+php artisan make:model ProductItem
+===========
+  	$table->string("description");
+            $table->integer('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->timestamps();
+ចូលរួមរំលែកទុក្ខផង
+---------------------------
+	    $table->increments('id');
+            $table->string('description');
+            $table->integer('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('orders');
